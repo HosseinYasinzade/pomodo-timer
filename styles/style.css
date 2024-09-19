@@ -3,3 +3,30 @@
   padding: 0;
   box-sizing: border-box;
 }
+html {
+  font-size: 62.5%;
+}
+body {
+  height: 100vh;
+  background-color: #6a1b9a;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container {
+  width: 70%;
+  height: 80vh;
+  background-color: #0288d1;
+  border-radius: 1.5rem;
+  box-shadow: 2px 2px 15px #1673dd;
+}
+.container_left {
+  width: 50%;
+  height: 100%;
+  background-color: #bdbdbd;
+  border-bottom-left-radius: 1.5rem;
+  border-top-left-radius: 1.5rem;
+}
+.container_right {
+  width: 50%;
+}
