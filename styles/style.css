@@ -19,6 +19,7 @@ body {
   background-color: #0288d1;
   border-radius: 1.5rem;
   box-shadow: 2px 2px 15px #1673dd;
+  display: flex;
 }
 .container_left {
   width: 50%;
@@ -29,4 +30,52 @@ body {
 }
 .container_right {
   width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.input {
+  border: none;
+  outline: none;
+  font-size: 2rem;
+  border-bottom: 1px solid #fff;
+  background: inherit;
+  height: 5rem;
+  color: #fff;
+  margin-bottom: 5rem;
+}
+.input::placeholder {
+  color: #fff;
+}
+#task-title {
+  width: 50rem;
+}
+.task-num {
+  width: 20rem;
+}
+.task_minute {
+  margin-right: 10rem;
+}
+.start_btn {
+  width: 20rem;
+  height: 5vh;
+  border: 2px solid #fff;
+  border-radius: 2rem;
+  background: initial;
+  font-size: 2rem;
+  color: #fff;
+  transition: all 0.3s ease-in;
+}
+
+.start_btn:hover {
+  border: none;
+  background-color: #fff;
+  color: #1673dd;
+}
+.form-title {
+  font-size: 5rem;
+  color: #fff;
+  margin-bottom: 5rem;
 }
