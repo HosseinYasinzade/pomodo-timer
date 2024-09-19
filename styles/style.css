@@ -85,6 +85,7 @@ body {
 }
 .container_left {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
@@ -92,4 +93,9 @@ body {
   font-size: 20rem;
   color: #0288d1;
   font-family: "digi";
+}
+.task-paragraph {
+  font-size: 3rem;
+  color: #0288d1;
+
 }
