@@ -1,3 +1,7 @@
+@font-face {
+  font-family: "digi";
+  src: url("../fonts/DS-DIGIT.TTF");
+}
 * {
   margin: 0;
   padding: 0;
@@ -78,4 +82,14 @@ body {
   font-size: 5rem;
   color: #fff;
   margin-bottom: 5rem;
+}
+.container_left {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.timer {
+  font-size: 20rem;
+  color: #0288d1;
+  font-family: "digi";
 }
