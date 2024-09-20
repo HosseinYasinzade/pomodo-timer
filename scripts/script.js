@@ -1,37 +1,23 @@
 const body = document.querySelector("body");
-let MinuteInput = document.querySelector(".task_minute").value;
-let secondeInput = document.querySelector(".task_seconde").value;
 const btn = document.querySelector(".set_btn");
 const timer = document.querySelector(".timer");
 const title = document.querySelector(".task-paragraph");
 
 let intervalId;
-let minute = Number(MinuteInput);
-let seconde = Number(secondeInput);
 
 const setTimer = (min, sec) => {
   timer.textContent = `${min} : ${sec}`;
 };
 
-const startTimer = () => {
-  if (seconde <= 0 && minute <= 0) {
-    clearInterval(intervalId);
-    title.textContent = "Time End";
-    return;
-  }
-
-  if (seconde === 0) {
-    minute--;
-    seconde = 59;
-  } else {
-    seconde--;
-  }
-
-  timer.textContent = `${minute} : ${seconde}`;
-};
-
 btn.addEventListener("click", function (e) {
   e.preventDefault();
+  let MinuteInput = document.querySelector(".task_minute").value;
+  console.log(MinuteInput);
+  let secondeInput = document.querySelector(".task_seconde").value;
+  console.log(secondeInput);
+
+  let minute = Number(MinuteInput);
+  let seconde = Number(secondeInput);
 
   if (
     secondeInput.value > 60 ||
@@ -52,6 +38,21 @@ btn.addEventListener("click", function (e) {
     title.textContent = "";
     setTimer(minute, seconde);
 
-    intervalId = setInterval(startTimer, 1000);
+    intervalId = setInterval(() => {
+      if (seconde <= 0 && minute <= 0) {
+        clearInterval(intervalId);
+        title.textContent = "Time End";
+        return;
+      }
+
+      if (seconde === 0) {
+        minute--;
+        seconde = 59;
+      } else {
+        seconde--;
+      }
+
+      timer.textContent = `${minute} : ${seconde}`;
+    }, 1000);
   }
 });
