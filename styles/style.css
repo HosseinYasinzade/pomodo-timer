@@ -62,7 +62,7 @@ body {
 .task_minute {
   margin-right: 10rem;
 }
-.start_btn {
+.btn {
   width: 20rem;
   height: 5vh;
   border: 2px solid #fff;
@@ -73,7 +73,7 @@ body {
   transition: all 0.3s ease-in;
 }
 
-.start_btn:hover {
+.btn:hover {
   border: none;
   background-color: #fff;
   color: #1673dd;
@@ -97,5 +97,4 @@ body {
 .task-paragraph {
   font-size: 3rem;
   color: #0288d1;
-
 }
