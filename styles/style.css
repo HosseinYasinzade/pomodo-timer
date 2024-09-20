@@ -98,3 +98,7 @@ body {
   font-size: 3rem;
   color: #0288d1;
 }
+.rest {
+  border: 2px solid #0288d1;
+  color: #0288d1;
+}

@@ -2,6 +2,7 @@ const body = document.querySelector("body");
 const btn = document.querySelector(".set_btn");
 const timer = document.querySelector(".timer");
 const title = document.querySelector(".task-paragraph");
+const titleInput = document.querySelector(".task_title");
 
 let intervalId;
 
@@ -11,11 +12,9 @@ const setTimer = (min, sec) => {
 
 btn.addEventListener("click", function (e) {
   e.preventDefault();
-  let MinuteInput = document.querySelector(".task_minute").value;
-  console.log(MinuteInput);
-  let secondeInput = document.querySelector(".task_seconde").value;
-  console.log(secondeInput);
 
+  let MinuteInput = document.querySelector(".task_minute").value;
+  let secondeInput = document.querySelector(".task_seconde").value;
   let minute = Number(MinuteInput);
   let seconde = Number(secondeInput);
 
@@ -35,7 +34,8 @@ btn.addEventListener("click", function (e) {
   } else {
     body.style.backgroundColor = "#6a1b9a";
     timer.style.color = "#0288d1";
-    title.textContent = "";
+    title.textContent = titleInput.value;
+
     setTimer(minute, seconde);
 
     intervalId = setInterval(() => {
@@ -44,14 +44,12 @@ btn.addEventListener("click", function (e) {
         title.textContent = "Time End";
         return;
       }
-
       if (seconde === 0) {
         minute--;
         seconde = 59;
       } else {
         seconde--;
       }
-
       timer.textContent = `${minute} : ${seconde}`;
     }, 1000);
   }
