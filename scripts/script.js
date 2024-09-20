@@ -3,6 +3,7 @@ const btn = document.querySelector(".set_btn");
 const timer = document.querySelector(".timer");
 const title = document.querySelector(".task-paragraph");
 const titleInput = document.querySelector(".task_title");
+const restBtn = document.querySelector(".rest");
 
 let intervalId;
 
@@ -53,4 +54,25 @@ btn.addEventListener("click", function (e) {
       timer.textContent = `${minute} : ${seconde}`;
     }, 1000);
   }
+});
+
+restBtn.addEventListener("click", (e) => {
+  e.preventDefault();
+  setTimer(5, 0);
+  let minute = 5;
+  let seconde = 0;
+  setInterval(() => {
+    if (seconde <= 0 && minute <= 0) {
+      clearInterval(intervalId);
+      title.textContent = "Time End";
+      return;
+    }
+    if (seconde === 0) {
+      minute--;
+      seconde = 59;
+    } else {
+      seconde--;
+    }
+    timer.textContent = `${minute} : ${seconde}`;
+  }, 1000);
 });
