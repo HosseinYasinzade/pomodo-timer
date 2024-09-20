@@ -5,6 +5,8 @@ const btn = document.querySelector(".set_btn");
 const timer = document.querySelector(".timer");
 const title = document.querySelector(".task-paragraph");
 
+let intervalId;
+
 const setTimer = (min, sec) => {
   timer.textContent = `${min} : ${sec}`;
 };
@@ -33,6 +35,7 @@ const startTimer = () => {
 
 btn.addEventListener("click", function (e) {
   e.preventDefault();
+
   if (
     secondeInput.value > 60 ||
     MinuteInput.value < 0 ||
@@ -51,6 +54,7 @@ btn.addEventListener("click", function (e) {
     timer.style.color = "#0288d1";
     title.textContent = "";
     setTimer(MinuteInput.value, secondeInput.value);
-    setInterval(startTimer, 1000);
+
+    intervalId = setInterval(startTimer, 1000);
   }
 });
