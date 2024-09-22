@@ -54,14 +54,18 @@ body {
   color: #fff;
 }
 #task-title {
-  width: 50rem;
+  width: 70%;
+  margin-left: 15%;
 }
 .task-num {
-  width: 20rem;
+  width: 30%;
+  margin-left: 15%;
 }
-.task_minute {
-  margin-right: 10rem;
+
+.set_btn {
+  margin-left: 15%;
 }
+
 .btn {
   width: 20rem;
   height: 5vh;
@@ -90,7 +94,7 @@ body {
   align-items: center;
 }
 .timer {
-  font-size: 20rem;
+  font-size: 18rem;
   color: #0288d1;
   font-family: "digi";
 }
@@ -101,4 +105,32 @@ body {
 .rest {
   border: 2px solid #0288d1;
   color: #0288d1;
+}
+
+@media screen and (max-width: 1175px) {
+  .timer {
+    font-size: 15rem;
+  }
+  .form-title {
+    font-size: 3.5rem;
+  }
+}
+
+@media screen and (max-width: 945px) {
+  .timer {
+    font-size: 12rem;
+  }
+}
+@media screen and (max-width: 750px) {
+  .container {
+    flex-direction: column;
+  }
+  .container_left {
+    width: 100%;
+    border-radius: 0;
+  }
+  .container_right {
+    width: 100%;
+    border-radius: 0;
+  }
 }

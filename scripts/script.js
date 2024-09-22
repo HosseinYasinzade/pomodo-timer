@@ -6,6 +6,7 @@ const titleInput = document.querySelector(".task_title");
 const restBtn = document.querySelector(".rest");
 
 let intervalId;
+let restInvalid;
 
 const setTimer = (min, sec) => {
   timer.textContent = `${min} : ${sec}`;
@@ -13,6 +14,11 @@ const setTimer = (min, sec) => {
 
 btn.addEventListener("click", function (e) {
   e.preventDefault();
+  clearInterval(intervalId);
+  clearInterval(restInvalid);
+
+  btn.disabled = true;
+  restBtn.disabled = false;
 
   let MinuteInput = document.querySelector(".task_minute").value;
   let secondeInput = document.querySelector(".task_seconde").value;
@@ -20,12 +26,14 @@ btn.addEventListener("click", function (e) {
   let seconde = Number(secondeInput);
 
   if (
-    secondeInput.value > 60 ||
-    MinuteInput.value < 0 ||
-    secondeInput.value < 0 ||
-    MinuteInput.value === "" ||
-    secondeInput.value === ""
+    seconde > 60 ||
+    minute < 0 ||
+    seconde < 0 ||
+    minute === "" ||
+    seconde === ""
   ) {
+    btn.disabled = false;
+
     body.style.backgroundColor = "red";
     timer.style.color = "red";
     MinuteInput.value = "";
@@ -58,12 +66,21 @@ btn.addEventListener("click", function (e) {
 
 restBtn.addEventListener("click", (e) => {
   e.preventDefault();
+
+  clearInterval(intervalId);
+  clearInterval(restInvalid);
+
+  restBtn.disabled = true;
+  btn.disabled = false;
+
+  title.textContent = "";
+
   setTimer(5, 0);
   let minute = 5;
   let seconde = 0;
-  setInterval(() => {
+  restInvalid = setInterval(() => {
     if (seconde <= 0 && minute <= 0) {
-      clearInterval(intervalId);
+      clearInterval(restInvalid);
       title.textContent = "Time End";
       return;
     }
